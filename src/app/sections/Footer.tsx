@@ -19,7 +19,7 @@ const Footer = () => {
       </div>
       <div className="links">
         <div className="company">
-          <h3 className="heading-3">CryptoKet</h3>
+          <h3 className="text-xl">CryptoKet</h3>
           <ul>
             <li>
               <a href="#">Explore</a>
@@ -33,7 +33,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="support">
-          <h3 className="heading-3">Support</h3>
+          <h3 className="text-xl">Support</h3>
           <ul>
             <li>
               <a href="#">Help center</a>

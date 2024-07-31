@@ -4,7 +4,7 @@ import { FaRegHeart, FaHeart } from "react-icons/fa6";
 const HotBids = () => {
   return (
     <section className="wrapper hot-bids">
-      <h1 className="heading-3">Hot Bids</h1>
+      <h1 className="heading-3 mb-5">Hot Bids</h1>
       <div className="bids">
         {hot_bids.map((bid) => (
           <div
@@ -14,7 +14,7 @@ const HotBids = () => {
             <div className="picture">
               <img src={bid.picture} />
             </div>
-            <h1 className="text-sm title">{bid.name}</h1>
+            <h1 className="paragraph-3 title">{bid.name}</h1>
             <div className="bottom">
               <p className="price text-xs">
                 <span className="font-semibold">{bid.price}</span>

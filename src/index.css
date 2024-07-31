@@ -1,172 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css');
 
-.bg-red-linear {
-  background: var(--red-linear);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.bg-red-violet {
-  background: var(--red-violet);
-}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
 
-.border-red-linear {
-  border: 1px solid var(--red-linear);
-}
-
-.border-red-violet {
-  border: 1px solid var(--red-violet);
-}
-
-.heading-1 {
-  font-size: 28px;
-  font-weight: 600;
-}
-
-.heading-2 {
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.heading-3 {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.font-semibold {
-  font-weight: 600;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-.text-lg {
-  font-size: 16px;
-  line-height: 26px;
-}
-
-.text-base {
-  font-size: 14px;
-  line-height: normal;
-}
-
-.text-sm {
-  font-size: 12px;
-  line-height: normal;
-}
-
-.text-xs {
-  font-size: 10px;
-  line-height: normal;
-}
-
-.text-btn {
-  font-size: 14px;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.btn {
-  padding: 9px 30px;
-}
-
-.flex {
-  display: flex;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 233px;
-  border-radius: 20px;
-  box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.10);
-  background: var(--white);
-
-  .img-wrapper {
-    border-radius: 20px;
-    width: 210px;
-    height: 230px;
-
-    image {
-      border-radius: 20px;
-    }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-
-  .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--red-linear);
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
-
-    .circle {
-      position: relative;
-      width: 18px;
-      height: 18px;
-      background: var(--white);
-      border-radius: 50%;
-
-      &::before {
-        content: "";
-        position: absolute;
-        inset: 50%;
-        translate: -50% -50%;
-        width: 14px;
-        height: 14px;
-        background: var(--red-linear);
-        border-radius: 50%;
-      }
-    }
+@layer base {
+  * {
+    @apply border-border;
   }
 
-  h1 {
-    display: none;
-    font-family: GothamPro;
-    color: var(--black-2);
-    font-size: 18px;
-    font-weight: 700;
+  body {
+    @apply bg-background text-foreground font-poppins overflow-x-hidden;
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-}
+@layer components {
+  .heading-3 {
+    @apply text-xl font-semibold leading-normal;
+  }
 
-body {
-  background: var(--white);
-  font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
-}
+  .paragraph-3 {
+    @apply text-sm font-semibold leading-normal;
+  }
 
-.wrapper {
-  width: min(1440px, 100% - 10.5px);
-  margin-inline: auto;
+  .btn {
+    @apply px-7 py-3;
+  }
 }

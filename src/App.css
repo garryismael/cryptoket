@@ -13,6 +13,51 @@
   --black-4: #24252D;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 233px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.10);
+  background: var(--white);
+
+  .img-wrapper {
+    border-radius: 20px;
+    width: 210px;
+    height: 230px;
+
+    image {
+      border-radius: 20px;
+    }
+  }
+}
+
+.logo {
+  @apply flex items-center gap-1;
+
+  .icon {
+    @apply flex items-center justify-center bg-red-linear w-8 h-8 rounded-lg;
+
+    .circle {
+      @apply relative w-5 h-5 bg-white rounded-full;
+
+      &::before {
+        @apply content-[''] absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-red-linear rounded-full;
+      }
+    }
+  }
+
+  h1 {
+    @apply hidden font-gotham text-black-2 text-lg font-bold;
+  }
+}
+
+.wrapper {
+  width: min(1440px, 100% - 10.5px);
+  margin-inline: auto;
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -56,6 +101,7 @@
   .search-input.active {
     opacity: 0;
   }
+
   .menu_burger {
     svg {
       color: var(--gray-3);
@@ -78,10 +124,12 @@
 
   nav {
     padding-left: 17px;
+
     ul {
       display: flex;
       flex-direction: column;
       gap: 15px;
+
       li {
         a {
           color: var(--black-1);
@@ -118,56 +166,33 @@
 }
 
 section.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  height: 270px;
-  padding-bottom: 40px;
+  @apply flex flex-col items-center justify-end pt-24 pb-10;
 
   .content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 143px;
-    border-radius: 25px;
-    padding: 0 10%;
+    @apply flex items-center justify-center h-40 rounded-3xl px-8;
     background:
       radial-gradient(100px circle at 90% 85%, rgba(255, 255, 255, 0.20) 50%, #0000 50.2%),
       radial-gradient(100px circle at 0% 0%, rgba(255, 255, 255, 0.20) 50%, #0000 50.2%),
       var(--gradient-red-linear);
 
     h1 {
-      color: var(--white);
-      font-family: GothamPro;
-      font-size: 20px;
-      letter-spacing: 2px;
-      font-weight: 700;
+      @apply text-white font-gotham text-xl font-bold tracking-widest;
     }
   }
 }
 
 section.top-sellers {
-  margin-bottom: 40px;
-
+  padding-bottom: 40px;
   .ranks {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    @apply flex flex-nowrap gap-3 overflow-x-scroll overflow-y-hidden;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
 
     .seller {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      align-items: center;
+      @apply relative flex items-center flex-col gap-1;
       flex: 0 0 auto;
-      width: 130px;
-      height: 165px;
+      width: 180px;
+      height: 200px;
       border: 1px solid var(--gray-1);
       border-radius: 20px;
       padding: 26px 0 8px 0;
@@ -208,23 +233,15 @@ section.top-sellers {
 }
 
 section.hot-bids {
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 
   .bids {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    @apply flex items-center justify-around flex-wrap;
 
     .bid {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      @apply flex flex-col items-start px-2 py-2 shadow-md rounded-xl;
       width: 145px;
       height: 212px;
-      padding: 12px 7px 17px 7px;
-      box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.10);
-      border-radius: 10px;
       gap: 5px;
 
       .picture {
@@ -247,7 +264,6 @@ section.hot-bids {
         overflow: hidden;
         text-wrap: nowrap;
         text-overflow: ellipsis;
-        font-weight: 600;
       }
 
       .bottom {
